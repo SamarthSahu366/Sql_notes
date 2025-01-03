@@ -1,0 +1,41 @@
+2. Relational Database Fundamentals
+   - Database Design Concepts:
+     - The process of designing a database structure to meet the requirements of an application.
+     - Involves defining tables, columns, data types, relationships, and constraints.
+   
+   - Entity-Relationship (ER) Model:
+     - A diagrammatic approach to database design.
+     - **Entities** represent objects (e.g., customer, product).
+     - **Attributes** describe the properties of entities (e.g., name, price).
+     - **Relationships** define how entities are related (e.g., a customer buys a product).
+   
+   - Tables, Rows, and Columns:
+     - **Tables**: Structured collection of data organized by columns and rows.
+     - **Rows**: Each row represents a single record or instance of an entity.
+     - **Columns**: Each column represents an attribute of the entity.
+   
+   - Primary Keys and Foreign Keys:
+     - **Primary Key**:
+       - A unique identifier for each record in a table.
+       - Ensures no duplicate records.
+       - Examples: `customer_id`, `order_id`.
+     - **Foreign Key**:
+       - A column in one table that links to the primary key of another table.
+       - Establishes relationships between tables.
+       - Example: `customer_id` in the `orders` table linking to the `customers` table.
+   
+   - Normalization (1NF, 2NF, 3NF, BCNF):
+     - The process of organizing data to reduce redundancy and dependency.
+     - **1NF (First Normal Form)**:
+       - Ensures data is stored in atomic units (no multi-valued attributes).
+     - **2NF (Second Normal Form)**:
+       - Achieved by removing partial dependencies (every non-key attribute must be fully dependent on the primary key).
+     - **3NF (Third Normal Form)**:
+       - Achieved by removing transitive dependencies (non-key attributes should not depend on other non-key attributes).
+     - **BCNF (Boyce-Codd Normal Form)**:
+       - A stricter version of 3NF where every determinant is a candidate key.
+   
+   - Denormalization and When to Use It:
+     - **Denormalization**: The process of combining tables to reduce the number of joins required in queries.
+     - Used when performance is more important than maintaining strict normalization (e.g., in read-heavy applications).
+     - Can improve query speed but at the cost of potential data redundancy and inconsistencies.

@@ -1,0 +1,45 @@
+DCL (Data Definition Language) Operations
+
+1.Grant Table: 
+    to grant the permission to access the particular part of db to individuals.
+    
+    syntax:
+        grant privilege(s)
+        on object
+        to user/role;
+
+        Here,
+
+            privilege: to alot type of permissions like select, insert,update, delete or all privileges;
+            object: DB object (view,table) on which the permission u want to grant;
+            user/role: to whom u want to server the object;
+
+        step 1: create the role named as custom.
+        QUERY:
+            create role custom;
+        
+        step 2: to create the obj (view,table).
+        QUERY:
+            create view  TempDb as
+            select first_name,last_name,email_id 
+            from customers;
+        
+        step 3: grant the permission.
+        QUERY:
+            GRANT ALL PRIVILEGES
+            ON TempDb
+            TO custom;
+
+        
+
+2.Revoke table:
+    to take the permission back.
+
+        QUERY:
+            revoke select on TempDb from custom;
+
+
+both grant and revoke work with select on clauses;
+
+    
+

@@ -1,0 +1,58 @@
+There are 4 tyoes of join
+    a.natural join
+    a.left join
+    a.right join
+    a.full join
+
+to practical all the above query we have to create db buyers and orders:
+
+cmd to do so:
+    Create the buyers table
+        create table buyers 
+            (
+                customer_id int primary key,
+                first_name varchar(50),
+                last_name varchar(50)
+            );
+
+    Create the orders table
+    create table orders 
+        (
+            order_id int primary key,
+            customer_id int,
+            order_date date,
+            amount decimal(10, 2),
+            foreign key (customer_id) references buyers(customer_id)
+        );
+
+ 
+ 1.left join 
+    include the row of matching row from both the tables and all rows of left table;
+
+    QUERY:
+        select * from buyers
+        left join orders on buyers.customer_id = orders.customer_id;
+
+
+ 2.right join 
+    include the row of matching row from both the tables and all rows of right table;
+
+    QUERY:
+        select * from buyers
+        right join orders on buyers.customer_id = orders.customer_id;
+
+
+ 3.full join 
+    include the row of matching row from both the tables otherwise null ;
+
+    QUERY:
+        select * from buyers
+        full outer join orders on buyers.customer_id = orders.customer_id;
+
+ 4.natural join 
+    include the rows both the tables;
+
+    QUERY:
+        select * from buyers
+        natural join orders;
+

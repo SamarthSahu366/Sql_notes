@@ -1,0 +1,49 @@
+ 1. row_number: 
+    assigns a unique number to each row within the result set, starting from 1 for the first row.
+
+        QUERY:
+            select customer_id, first_name, last_name,
+                row_number() over (order by order_date desc) as row_num
+            from customers
+            join orders on customers.customer_id = orders.customer_id;
+
+ 2. rank: 
+    assigns a rank to each row within the result set, with gaps in the ranking for ties.
+
+    QUERY:
+        select customer_id, first_name, last_name,
+            rank() over (order by amount desc) as rank
+        from orders;
+
+ 3. dense_rank: 
+    assigns a rank to each row, but without gaps for ties.
+
+    QUERY:
+        select customer_id, first_name, last_name,
+            dense_rank() over (order by amount desc) as dense_rank
+        from orders;
+
+ 4. ntile: 
+    divides the result set into a specified number of roughly equal parts, returning the bucket number.
+
+    QUERY:
+        select customer_id, first_name, last_name,
+            ntile(4) over (order by order_date desc) as quartile
+        from customers
+        join orders on customers.customer_id = orders.customer_id;
+
+ 5. lag: 
+        accesses data from the previous row within the result set.
+
+        QUERY:
+            select customer_id, order_date, amount,
+                lag(amount, 1) over (order by order_date) as previous_amount
+            from orders;
+
+ 6. lead: 
+        accesses data from the next row within the result set.
+
+        QUERY:
+            select customer_id, order_date, amount,
+                lead(amount, 1) over (order by order_date) as next_amount
+            from orders;

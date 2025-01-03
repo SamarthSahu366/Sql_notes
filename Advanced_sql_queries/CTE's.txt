@@ -1,0 +1,41 @@
+CTE's:
+    just the temporary result set use to filter data;
+
+    example: CTE for filtering, customers who ordered above 100.
+
+    query:
+        with customer_orders as 
+
+        (
+            select customer_id, first_name, last_name, amount
+            from customers
+            join orders on customers.customer_id = orders.customer_id
+        )
+
+        select * from customer_orders
+        where amount > 100;  
+
+recursive queryies:
+    keeps on calling itself, use stack data structure to call functions recursive.
+
+    example:
+        to get the emp with managers;
+
+    query: 
+        WITH RECURSIVE EmployeeHierarchy AS 
+            (
+                SELECT employee_id, employee_name, manager_id
+                FROM employees
+                WHERE employee_name = 'Alice'
+            
+                UNION ALL
+            
+                //Recursive case: Get employees who report to the previously selected employees
+                
+                SELECT e.employee_id, e.employee_name, e.manager_id
+                FROM employees e
+                JOIN EmployeeHierarchy eh ON e.manager_id = eh.employee_id
+            )
+        
+        SELECT * FROM EmployeeHierarchy;
+

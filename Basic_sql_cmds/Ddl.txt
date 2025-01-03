@@ -1,0 +1,38 @@
+DDL (Data Definition Language) Operations
+
+1.Create Table: 
+    Creating a table for 'customers'.
+
+        QUERY:
+        create table customers 
+        (
+            customer_id int primary key,
+            first_name varchar(50),
+            last_name varchar(50),
+            email varchar(100),
+            phone varchar(20)
+        );
+
+2.Alter table:
+    case 1:
+    renaming a column in 'customers'
+    renaming 'email' column to 'email_id'
+        
+        QUERY:
+        alter table customers
+        rename column email to email_id;
+
+    case 2:
+    adding 'dept' column to store department info
+        
+        QUERY:
+        alter table customers
+        add column dept varchar(255);
+
+3.Drop table: 
+        deleting the 'customers' table completely
+        this will delete the entire table and its data
+
+        QUERY:
+        drop table customers;
+

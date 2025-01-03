@@ -1,0 +1,69 @@
+1. History and Evolution of Databases
+   - Early Days:
+     - Databases began with flat files in the 1950s-60s.
+     - Early systems were hierarchical, like IBM's IMS.
+   
+   - Relational Databases:
+     - Introduced in 1970 by Edgar Codd.
+     - Uses tables and SQL for querying.
+     - Brought structured data and ACID properties for consistency.
+   
+   - NoSQL Emergence:
+     - In the 2000s, NoSQL databases arose to handle unstructured and large-scale data.
+     - Focuses on high scalability and flexibility.
+   
+   - Current Trends:
+     - Cloud databases and NewSQL combine the benefits of relational and NoSQL systems.
+     - Aim for distributed, high-performance systems.
+
+---
+
+2. Types of Databases: Relational vs. Non-relational
+   - Relational Databases (RDBMS):
+     - Use tables with fixed schema.
+     - Strong consistency with ACID properties.
+     - Examples: MySQL, PostgreSQL.
+   
+   - Non-relational Databases (NoSQL):
+     - Use flexible schema (key-value, document, column, graph).
+     - Scalable and better for unstructured data.
+     - Examples: MongoDB, Cassandra.
+
+---
+
+3. Database Management Systems (DBMS) Overview
+   - A DBMS is software that manages databases, allowing users to define, query, and manage data.
+   
+   - Functions:
+     - Data definition
+     - Data manipulation
+     - Data security
+     - Data integrity
+     - Data backup
+     - Concurrency control
+   
+   - Types of DBMS:
+     - Hierarchical DBMS
+     - Network DBMS
+     - Relational DBMS (RDBMS)
+     - Object-oriented DBMS
+     - NoSQL DBMS
+   
+   - Examples:
+     - MySQL, PostgreSQL, MongoDB, Oracle, SQL Server.
+
+---
+
+4. SQL vs. NoSQL Databases
+   - SQL Databases:
+     - Use structured tables and fixed schema.
+     - Support ACID properties for data consistency.
+     - Good for transactional systems.
+     - Examples: MySQL, PostgreSQL.
+   
+   - NoSQL Databases:
+     - Use flexible schema for high scalability and unstructured data.
+     - Often prioritize availability over consistency (BASE).
+     - Ideal for big data and distributed systems.
+     - Examples: MongoDB, Cassandra.
+

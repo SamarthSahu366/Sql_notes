@@ -1,0 +1,24 @@
+
+SubQuery:
+    A subquery is a query nested inside another query. 
+    It is executed once, and its result is used by the outer query.
+
+    example:
+    select * from buyers
+    where customer_id in (select customer_id from orders where amount > 100);
+
+
+CorrelatedQuery:
+    A correlated subquery is a subquery that references columns from the outer query. 
+    It is executed for each outer query once.
+    
+    example:
+    select * from buyers b
+    where exists (
+        select 1 from orders o
+        where o.customer_id = b.customer_id and o.amount > 100
+    );
+
+
+Note: 
+both work with three clauses i.e where,select,exists;

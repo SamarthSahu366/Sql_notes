@@ -1,0 +1,45 @@
+DDL (Data Manipulation Language) 
+
+1.Select Table: 
+    to view a table.
+
+    QUERY: 
+        Select * from customers;
+
+2.Insert table:
+    to add the data to tabel.
+
+    QUERY:
+        insert into customers (customer_id, first_name, last_name, email_id, phone, dept) 
+        values 
+        (1, 'john', 'doe', 'john.doe@example.com', '123-456-7890', 'sales'),
+        (2, 'jane', 'smith', 'jane.smith@example.com', '234-567-8901', 'marketing'),
+        (3, 'bob', 'brown', 'bob.brown@example.com', '345-678-9012', 'hr'),
+        (4, 'alice', 'davis', 'alice.davis@example.com', '456-789-0123', 'finance'),
+        (5, 'charlie', 'wilson', 'charlie.wilson@example.com', '567-890-1234', 'engineering'),
+        (6, 'david', 'moore', 'david.moore@example.com', '678-901-2345', 'sales'),
+        (7, 'emma', 'taylor', 'emma.taylor@example.com', '789-012-3456', 'marketing'),
+        (8, 'frank', 'anderson', 'frank.anderson@example.com', '890-123-4567', 'hr'),
+        (9, 'grace', 'thomas', 'grace.thomas@example.com', '901-234-5678', 'finance'),
+        (10, 'hannah', 'jackson', 'hannah.jackson@example.com', '012-345-6789', 'engineering');
+        
+
+3.update table: 
+        to update the existing data, update works with set;
+        example: to change the name from david to will.
+        QUERY:
+            update  customers
+            set first_name = 'will'
+            where first_name='david';
+
+4.Delete cmd:
+    to delete the data at particular location.
+    example: delete the row hannah.
+
+        QUERY:
+            DELETE FROM CUSTOMERS 
+            WHERE first_name='hannah';
+
+
+        
+

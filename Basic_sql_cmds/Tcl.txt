@@ -1,0 +1,34 @@
+TCL (Transaction control Language) Operations
+
+
+
+1.commit Table: 
+    to make the permanent changes to db;
+    use begin clause from where u want to make the changes permanent in db and end with commit clause;
+    
+    QUERY:
+        begin;
+
+        insert into customers (customer_id, first_name, last_name, email_id, phone, dept) 
+        values (10, 'alex', 'roberts', 'alex.roberts@example.com', '234-567-8901', 'sales');
+
+        commit;
+
+
+    
+
+2.RollBack table:
+        to undo the changes in Db;
+        QUERY:
+            begin;
+            
+            insert into customers (customer_id, first_name, last_name, email_id, phone, dept) 
+            values (11, 'alex', 'roberts', 'alex.roberts@example.com', '234-567-8901', 'sales');
+
+            ROLLBACK;
+
+
+
+
+    
+

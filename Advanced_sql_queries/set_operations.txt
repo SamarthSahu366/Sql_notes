@@ -1,0 +1,26 @@
+ 1. union: 
+    combines results from multiple select queries and removes duplicates.
+    each select query must have the same number of columns and compatible data types.
+
+    QUERY:
+        select customer_id, first_name, last_name from customers where region = 'north america'
+        union
+        select customer_id, first_name, last_name from customers where region = 'europe';
+
+ 2. intersect:
+    returns only the rows that are common to both select queries.
+    both select queries must have the same number of columns and compatible data types.
+
+    QUERY:
+        select customer_id, first_name from customers
+        intersect
+        select customer_id, first_name from orders;
+
+ 3. union all: 
+    combines results from multiple select queries and does not remove duplicates.
+    each select query must have the same number of columns and compatible data types.
+
+    QUERY:
+        select customer_id, first_name, last_name from customers where region = 'north america'
+        union all
+        select customer_id, first_name, last_name from customers where region = 'europe';
