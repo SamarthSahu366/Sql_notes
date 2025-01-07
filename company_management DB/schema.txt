@@ -1,0 +1,67 @@
+create table hr_team (
+    hrid int primary key,
+    hrname varchar(100) not null,
+    contact varchar(50)
+);
+
+create table shift (
+    shiftid int primary key,
+    shiftname varchar(50) not null,
+    starttime time not null,
+    endtime time not null
+);
+
+create table project (
+    projectid int primary key,
+    projectname varchar(100) not null,
+    startdate date,
+    enddate date,
+    budget float
+);
+
+create table finance (
+    financeid int primary key,
+    budget float not null,
+    expenses float,
+    revenue float,
+    projectid int unique,
+    foreign key (projectid) references project(projectid)
+);
+
+create table product (
+    productid int primary key,
+    productname varchar(100) not null,
+    version varchar(20),
+    releasedate date,
+    projectid int unique,
+    foreign key (projectid) references project(projectid)
+);
+
+create table marketing (
+    campaignid int primary key,
+    campaignname varchar(100) not null,
+    budget float,
+    duration int,
+    projectid int unique,
+    foreign key (projectid) references project(projectid)
+);
+
+create table employee (
+    employeeid int primary key,
+    name varchar(100) not null,
+    role varchar(50),
+    teamid int,
+    shiftid int,
+    salary float,
+    hrid int,
+    foreign key (hrid) references hr_team(hrid),
+    foreign key (shiftid) references shift(shiftid)
+);
+
+create table employee_project (
+    employeeid int,
+    projectid int,
+    primary key (employeeid, projectid),
+    foreign key (employeeid) references employee(employeeid),
+    foreign key (projectid) references project(projectid)
+);
